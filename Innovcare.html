@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovcare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: white;
+            scroll-behavior: smooth;
+            
+        }
+        
+        .container {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .mobile{
+            text-decoration: none;
+            color: black;
+            font-size: 10px;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            gap: 20px;
+        }
+
+        .logo-right {
+            flex-grow: 5;
+            height: 80px;
+            border-radius: 5% 50px 25% 50px;
+            transform: rotate(-4deg);
+        }
+
+        .logo-left {
+            flex-grow: 1;
+            max-width: 200px;
+        }
+        .innovation-text {
+            color: rgb(201, 95, 244);
+            padding: 5px 10px;
+            border-radius: 10px;
+            text-shadow: 4px 4px 4px rgb(218, 60, 12);
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 15px;
+            transform: perspective(100px) rotateX(10deg);
+            display: inline-block;
+        }
+
+        .actions {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .action-button {
+            background-color: #ead8e1;
+            color: rgb(58, 0, 0);
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            box-sizing: border-box;
+        }
+
+        .action-button:hover {
+            background-color: #d75c96;
+        }
+
+        .mobile-logo-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 50px;
+        }
+
+        .mobile-logo {
+            max-width: 10px;
+            height: auto;
+            border-radius: 50px;
+        }
+        .mobile-logo1 {
+            max-width: 30px;
+            height: auto;
+            border-radius: 50px;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1000px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .container-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+            margin-bottom: 10px;
+        }
+
+        .container-group img {
+            border-radius: 40px;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            background: none;
+        }
+        
+        img {
+            mix-blend-mode: multiply;
+           
+        }
+
+        .img1,
+        .img3,
+        .img5 {
+            object-fit: cover;
+            /* border: 5px solid blue; */
+            
+        }
+
+        .img2,
+        .img4 {
+            width: 100%;
+            height: auto;
+            max-width: none;
+            margin: 0 auto;
+            
+        }
+        
+        .form-container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #e8e9b6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-container h2 {
+            color: #e03d3d;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid black;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #ead8e1;
+            border: 1px solid rgb(226, 108, 181);
+            border-radius: 50px;
+            color: rgb(58, 0, 0);
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 40%;
+        }
+        
+        .form-group button:hover {
+            background-color: #f6885c;
+        }
+        
+        .contact-info {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #d7ebea;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        
+        .contact-info h2 {
+            margin-left: 40%;
+            color: #e03d3d;
+        }
+        
+        .contact-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;            
+        }
+        
+        .contact-item label {
+            font-weight: lighter;
+            margin-right: 10px;
+            color: rgb(45, 45, 246);
+        }
+        
+        .contact-item a {
+            color: #d75c96;
+            text-decoration: none;
+        }
+                
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+                @media (max-width: 768px) {
+                    .container-group {
+                        grid-template-columns: 1fr;
+                        /* Single column layout for mobile */
+                    }
+        
+                    .action-button {
+                        width: calc(50% - 10px);
+                    }
+        
+                    .action-button:nth-child(1) {
+                        width: 100%;
+                        order: 3;
+                    }
+                    .empty-div
+            {
+                width: 100%; 
+                height: 200px;
+            }
+                 
+                }
+        
+                @media (min-width: 769px) and (max-width: 1024px) {
+                    .actions {
+                        flex-direction: row-reverse;
+                    }
+        
+                    .action-button {
+                        width: calc(50% - 10px);
+                    }
+        
+                    .action-button:nth-child(1) {
+                        width: 100%;
+                        order: 3;
+                    }
+                    .empty-div
+            {
+                width: 100%; 
+                height: 200px;
+            }
+                    
+        
+                }
+        
+                @media (max-width: 1024px) {
+                    .logo-right {
+                        max-width: 200px;
+                        height: auto;
+                        transform: rotate(-10deg);
+                        flex-grow: 8;
+                        border-radius: 25% 50px 25% 50px;
+                    }
+        
+                    .logo-left {
+                        flex-grow: 1;
+                        max-width: 100px;
+                    }
+        
+                    .logos {
+                        gap: 1px;
+                    }
+                    .empty-div
+            {
+                width: 100%; 
+                height: 250px;
+            }
+                }
+                @media (max-width: 768px) {
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-item:nth-child(3) {
+                        width: 100%;
+                        order: 3;
+                    }
+                    .empty-div
+            {
+                width: 100%; 
+                height: 250px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .contact-item {
+                flex-direction: row-reverse;
+            }
+            .contact-item  {
+                width: calc(50% - 10px);
+            }
+            .contact-item:nth-child(1) {
+                        width: 100%;
+                        order: 3;
+                    }
+                    .form-container h2 {
+               
+                margin-left: 1px;
+            }
+            .empty-div
+            {
+                width: 100%; 
+                height: 250px;
+            }
+        }
+        </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logos">
+            <img src="logo.png" alt="Logo" class="logo-left">
+            <p class="innovation-text">Innovation for better gynaecological care</p>
+            <a href="tel:022-48261366" class="mobile">
+                <img src="mobilelogo.jpg" alt="Mobile Logo" class="mobile-logo"> 022-48261366
+            </a>
+        </div>
+        <div class="actions">
+            <a href="#container-section" class="action-button">Our Products</a>
+            <a href="#form-section" class="action-button">Request Product sample</a>
+            <a href="https://www.innovcare.in/" class="action-button">Visit Our Website</a>
+            <a href="#contact-info" class="action-button">Contact Us</a>
+        </div>
+
+        <div class="content">
+            <div class="container-group" id="container-section">
+                <div class="m1">
+                    <img src="img1.png" alt="img1" class="img1">
+                </div>
+                <div class="m1">
+                    <img src="img2.png" alt="img2" class="img2">
+                </div>
+                <div class="m1">
+                    <img src="img3.png" alt="img3" class="img3">
+                </div>
+                <div class="m1">
+                    <img src="img4.png" alt="img4" class="img4">
+                </div>
+                <div class="m1">
+                    <img src="img5.png" alt="img5" class="img5">
+                </div>
+                <div class="m1">
+                    <img src="img6.png" alt="img6">
+                </div>
+                <div class="m1">
+                    <img src="img7.png" alt="img7">
+                </div>
+                <div class="m1">
+                    <img src="img8.png" alt="img8">
+                </div>
+                <div class="m1">
+                    <img src="img9.png" alt="img9" class="img9">
+                </div>
+            </div>
+        </div>
+
+        <div id="form-section" class="form-container">
+            <h2>Request for Product Sample</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label for="product">Product Name</label>
+                    <input type="text" id="product" name="product" placeholder="Enter product name" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter Message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="contact-info" class="contact-info">
+            <h2>Contact us</h2>
+            <div class="contact-item">
+                <div class="contact-item">
+                    <a href="tel:022-48261366"><img src="mobilelogo.jpg" alt="Mobile Logo" class="mobile-logo1">022-48261366</a>
+                </div>
+                <div class="contact-item">
+                  <a href="mailto:info@innovcare.in"><img src="maillogo.jpeg" alt="Mail Logo" class="mobile-logo1">info@innovcare.in</a>
+                </div>
+                <label>visit:
+                <a href="https://www.innovcare.in/" target="_blank" class="visit">https://www.innovcare.in/</a>
+            </label>
+            </div>
+        </div>
+        <div class="empty-div"></div>
+    </div>
+   
+</body>
+
+</html>
